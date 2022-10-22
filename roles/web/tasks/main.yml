@@ -1,0 +1,17 @@
+---
+# tasks file for web
+- name: Eliminar ruta por defecto
+  command: ip route del default
+
+- name: Agregar ruta nueva por defecto
+  command: ip route add default via 10.0.0.1
+
+- name: Instalar Apache2
+  apt: 
+    name: apache2 
+    state: present
+
+- name: Configurar pagina estatica
+  template: 
+    src: index.html.j2 
+    dest: /var/www/html/index.html

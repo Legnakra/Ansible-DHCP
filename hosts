@@ -1,0 +1,16 @@
+all:
+  children:
+    servidores:
+      hosts:
+        router:
+          ansible_ssh_host: router
+          ansible_ssh_private_key_file: /home/maria/.ssh/id_rsa
+          direccion_bridge: 192.168.15.33
+        web:
+          ansible_ssh_host: servidor-web
+          ansible_ssh_private_key_file: /home/maria/.ssh/id_rsa
+    clientes:
+      hosts:    
+        cliente:
+          ansible_ssh_host: cliente
+          ansible_ssh_private_key_file: /home/maria/.ssh/id_rsa

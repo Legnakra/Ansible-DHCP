@@ -1,0 +1,18 @@
+#Variables isc-dhcp-server
+interfaz: ens8
+
+#Variables dhcpd.conf
+subnet: 10.0.0.0
+netmask: 255.255.255.0
+default_lease_time: 3600
+max_lease_time: 3600
+range: 10.0.0.100 10.0.0.110
+option_subnet_mask: 255.255.255.0
+option_broadcast_address: 10.0.0.255
+option_routers: 10.0.0.1
+option_domain_name_servers: 8.8.8.8,8.8.4.4
+
+#Reserva dhcp
+name_reserved: servidor-web
+mac_reserved: 52:54:00:80:ac:d8
+fixed_address: 10.0.0.2

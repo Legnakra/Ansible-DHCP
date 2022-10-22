@@ -1,0 +1,24 @@
+# dhcpd.conf
+#
+# Configuración de la red del router-dhcp.
+#
+#
+# 
+#
+
+ddns-update-style none;
+
+subnet {{ subnet }} netmask {{ netmask }} {
+  default-lease-time {{ default_lease_time }};
+  max-lease-time {{ max_lease_time }};  
+  range {{ range }};
+  option subnet-mask {{ option_subnet_mask }};
+  option broadcast-address {{ option_broadcast_address }};
+  option routers {{ option_routers }};
+  option domain-name-servers {{ option_domain_name_servers }};
+}
+
+host {{ name_reserved }} {
+  hardware ethernet {{ mac_reserved }};
+  fixed-address {{ fixed_address }};
+}

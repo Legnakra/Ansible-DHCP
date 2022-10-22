@@ -1,0 +1,25 @@
+- hosts: router
+  roles:
+    - router
+    - dhcp
+  become: true
+
+- hosts: router
+  roles:	
+    - dhcp
+  become: true
+
+- hosts: web
+  roles:
+    - cliente
+  become: true
+
+- hosts: servidores
+  roles:
+    - common
+  become: true
+
+- hosts: web
+  roles:
+    - web
+  become: true
